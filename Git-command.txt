@@ -1,1 +1,244 @@
-git command
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\ADMIN\OneDrive\Desktop\Git3>git
+usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--config-env=<name>=<envvar>] <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone     Clone a repository into a new directory
+   init      Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add       Add file contents to the index
+   mv        Move or rename a file, a directory, or a symlink
+   restore   Restore working tree files
+   rm        Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect    Use binary search to find the commit that introduced a bug
+   diff      Show changes between commits, commit and working tree, etc
+   grep      Print lines matching a pattern
+   log       Show commit logs
+   show      Show various types of objects
+   status    Show the working tree status
+
+grow, mark and tweak your common history
+   branch    List, create, or delete branches
+   commit    Record changes to the repository
+   merge     Join two or more development histories together
+   rebase    Reapply commits on top of another base tip
+   reset     Reset current HEAD to the specified state
+   switch    Switch branches
+   tag       Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch     Download objects and refs from another repository
+   pull      Fetch from and integrate with another repository or a local branch
+   push      Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+See 'git help git' for an overview of the system.
+
+C:\Users\ADMIN\OneDrive\Desktop\Git3>git status
+fatal: not a git repository (or any of the parent directories): .git
+
+C:\Users\ADMIN\OneDrive\Desktop\Git3>
+C:\Users\ADMIN\OneDrive\Desktop\Git3>git init
+Initialized empty Git repository in C:/Users/ADMIN/OneDrive/Desktop/Git3/.git/
+
+C:\Users\ADMIN\OneDrive\Desktop\Git3>git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Git-command.txt
+        Gitfile1.txt
+        cod3file.txt
+        gitsteps.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\Users\ADMIN\OneDrive\Desktop\Git3>git add Gi-command.txt
+fatal: pathspec 'Gi-command.txt' did not match any files
+
+C:\Users\ADMIN\OneDrive\Desktop\Git3>git remote add origin https://github.com/RajashekharJeshollu/BI-Project.git
+
+C:\Users\ADMIN\OneDrive\Desktop\Git3>git add Git-command.txt
+
+C:\Users\ADMIN\OneDrive\Desktop\Git3>git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   Git-command.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Gitfile1.txt
+        cod3file.txt
+        gitsteps.txt
+
+
+C:\Users\ADMIN\OneDrive\Desktop\Git3>git commit -m "Commiting Git-command.txt local"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'ADMIN@DESKTOP-19MU1EL.(none)')
+
+C:\Users\ADMIN\OneDrive\Desktop\Git3>git config --global user.email "rajsekharjesollu@outlook.com"
+
+C:\Users\ADMIN\OneDrive\Desktop\Git3> git config --global user.name "rajashekharjeshollu"
+
+C:\Users\ADMIN\OneDrive\Desktop\Git3>git commit -m "commiting Git-command.txt local"
+[master (root-commit) 7f158f2] commiting Git-command.txt local
+ 1 file changed, 50 insertions(+)
+ create mode 100644 Git-command.txt
+
+C:\Users\ADMIN\OneDrive\Desktop\Git3>git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Gitfile1.txt
+        cod3file.txt
+        gitsteps.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\Users\ADMIN\OneDrive\Desktop\Git3>git push
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+C:\Users\ADMIN\OneDrive\Desktop\Git3>git push -u origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/RajashekharJeshollu/BI-Project.git'
+
+C:\Users\ADMIN\OneDrive\Desktop\Git3>git push -u origin master
+To https://github.com/RajashekharJeshollu/BI-Project.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/RajashekharJeshollu/BI-Project.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+C:\Users\ADMIN\OneDrive\Desktop\Git3>Git pull
+remote: Enumerating objects: 16, done.
+remote: Counting objects: 100% (16/16), done.
+remote: Compressing objects: 100% (10/10), done.
+remote: Total 16 (delta 3), reused 13 (delta 1), pack-reused 0
+Unpacking objects: 100% (16/16), 7.92 KiB | 59.00 KiB/s, done.
+From https://github.com/RajashekharJeshollu/BI-Project
+ * [new branch]      master     -> origin/master
+ * [new branch]      testbrach1 -> origin/testbrach1
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> master
+
+
+C:\Users\ADMIN\OneDrive\Desktop\Git3>git checkout testbrach1
+branch 'testbrach1' set up to track 'origin/testbrach1'.
+Switched to a new branch 'testbrach1'
+
+C:\Users\ADMIN\OneDrive\Desktop\Git3>
+C:\Users\ADMIN\OneDrive\Desktop\Git3>git status
+On branch testbrach1
+Your branch is up to date with 'origin/testbrach1'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Git-command.txt
+        Gitfile1.txt
+        cod3file.txt
+        gitsteps.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\Users\ADMIN\OneDrive\Desktop\Git3>git add Git-command.txt
+
+C:\Users\ADMIN\OneDrive\Desktop\Git3>git status
+On branch testbrach1
+Your branch is up to date with 'origin/testbrach1'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   Git-command.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Gitfile1.txt
+        cod3file.txt
+        gitsteps.txt
+
+
+C:\Users\ADMIN\OneDrive\Desktop\Git3>git commit -m "commiting Git-command"
+[testbrach1 a53b654] commiting Git-command
+ 1 file changed, 1 insertion(+)
+ create mode 100644 Git-command.txt
+
+C:\Users\ADMIN\OneDrive\Desktop\Git3>git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 295 bytes | 295.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/RajashekharJeshollu/BI-Project.git
+   35d4e02..a53b654  testbrach1 -> testbrach1
+
+C:\Users\ADMIN\OneDrive\Desktop\Git3>git branch
+  master
+* testbrach1
+
+C:\Users\ADMIN\OneDrive\Desktop\Git3>git checkout -b "Newbranch2"
+Switched to a new branch 'Newbranch2'
+
+C:\Users\ADMIN\OneDrive\Desktop\Git3>git status
+On branch Newbranch2
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Gitfile1.txt
+        cod3file.txt
+        gitsteps.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\Users\ADMIN\OneDrive\Desktop\Git3>git branch
+* Newbranch2
+  master
+  testbrach1
+
+C:\Users\ADMIN\OneDrive\Desktop\Git3>
